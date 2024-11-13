@@ -1,0 +1,386 @@
+body,
+html {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #F3F6F8;
+    color: #333;
+}
+
+header {
+    background-color: #F3F6F8;
+    color: #000;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+header img {
+    height: 300px;
+    width: auto;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f4f4f9;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -4px;
+    background-color: #1958F7;
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+.card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.card {
+    border-radius: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img-top {
+    height: 320px;
+    object-fit: cover;
+}
+
+.btn-custom {
+    background-color: #E7ECF0;
+    color: rgb(0, 0, 0);
+    border-radius: 25px;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+.btn-custom:hover {
+    background-color: #e0e0eb;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 400px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: none;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #103F39;
+    color: white;
+    font-size: 0.9em;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.184);
+    /* Semi-transparent black background */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.carousel-caption h5 {
+    font-weight: bold;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.carousel-caption p {
+    color: white;
+    font-size: 1rem;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.184);
+    /* Semi-transparent black background */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.carousel-caption h5 {
+    font-weight: bold;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.carousel-caption p {
+    color: white;
+    font-size: 1rem;
+}
+
+/* Banner Layanan */
+.banner-container {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: visible;
+    /* Menjaga agar scroll vertikal tidak terkunci */
+    gap: 10px;
+    padding-bottom: 10px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.banner-card {
+    flex: 0 0 30%;
+    /* Mengatur agar ada 3 card dalam satu baris */
+    scroll-snap-align: center;
+    /* Menambahkan scroll-snap ke card, bukan container */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Gambar Banner */
+.banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Scrollbar Custom */
+.banner-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.banner-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+.banner-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .banner-card {
+        flex: 0 0 60%;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-card {
+        flex: 0 0 90%;
+    }
+}
+
+
+/* Popup Modal Styling */
+.popup-modal {
+    display: none;
+    /* Modal disembunyikan secara default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Latar belakang hitam transparan */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    /* Menempatkan modal di atas elemen lain */
+}
+
+.popup-img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    color: #ff0000;
+}
+
+/* Kontainer untuk aplikasi */
+.app-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    /* Memberikan jarak antar card */
+    margin: 10px;
+}
+
+
+/* Responsivitas untuk tablet dan ponsel */
+@media (max-width: 1200px) {
+    .app-card {
+        width: calc(33.33% - 20px);
+        /* 3 aplikasi per baris */
+    }
+}
+
+@media (max-width: 768px) {
+    .app-card {
+        width: calc(50% - 20px);
+        /* 2 aplikasi per baris */
+    }
+}
+
+@media (max-width: 480px) {
+    .app-card {
+        width: 100%;
+        /* 1 aplikasi per baris pada perangkat kecil */
+    }
+}
+
+
+/* Aplikasi Pelayanan */
+.app-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* 5 aplikasi per baris untuk ukuran desktop */
+    gap: 0px;
+    /* Jarak antar aplikasi */
+    margin-bottom: 40px;
+}
+
+.app-card {
+    width: 250px;
+    text-align: center;
+    margin: 0px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    border-color: #333;
+}
+
+.app-card:hover {
+    transform: scale(1.05);
+
+    background-color: #f4f4f9;
+}
+
+.app-card img {
+    width: 100px;
+    height: 100px;
+}
+
+.app-card-body {
+    padding: 15px;
+}
+
+.heading-bold {
+    font-weight: bold;
+}
+
+/* Responsif untuk tampilan mobile */
+@media (max-width: 768px) {
+    .app-container {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 aplikasi per baris untuk tablet */
+    }
+}
+
+@media (max-width: 480px) {
+    .app-container {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 aplikasi per baris untuk ponsel */
+    }
+}
+
+/* Responsif untuk tablet dengan ukuran layar 600px hingga 768px */
+@media (min-width: 600px) and (max-width: 768px) {
+    .app-container {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 aplikasi per baris pada tablet */
+    }
+}
+
+/* Styling for the heading */
+.heading-bold {
+    font-weight: bold;
+}
+
+/* Container for the scrolling animation */
+.scrolling-logo-container {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.scrolling-logo-content {
+    display: inline-flex;
+    align-items: center;
+    animation: scrollLeft linear infinite;
+    animation-play-state: running;
+    /* Set to running by default */
+}
+
+.scrolling-logo-container:hover .scrolling-logo-content {
+    animation-play-state: paused;
+    /* Pause animation on hover */
+}
+
+.app-card-logo {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.app-card-logo img {
+    width: 100px;
+    /* Adjust logo size */
+    height: auto;
+    transition: transform 0.3s;
+}
+
+/* Hover effect on logos */
+.app-card-logo:hover img {
+    transform: scale(1.1);
+}
+
+/* Keyframes to control scrolling speed */
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
