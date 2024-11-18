@@ -1,3 +1,4 @@
+/* ========== Global Styling ========== */
 body,
 html {
     font-family: 'Poppins', sans-serif;
@@ -8,6 +9,7 @@ html {
     color: #333;
 }
 
+/* Header */
 header {
     background-color: #F3F6F8;
     color: #000;
@@ -24,6 +26,7 @@ header img {
     width: auto;
 }
 
+/* Navbar Links */
 .navbar-nav .nav-link {
     color: white;
     position: relative;
@@ -49,6 +52,7 @@ header img {
     width: 100%;
 }
 
+/* ========== Card Styles ========== */
 .card-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -70,9 +74,10 @@ header img {
     object-fit: cover;
 }
 
+/* Button Styling */
 .btn-custom {
     background-color: #E7ECF0;
-    color: rgb(0, 0, 0);
+    color: #000;
     border-radius: 25px;
     padding: 10px 20px;
     transition: background-color 0.3s;
@@ -82,6 +87,7 @@ header img {
     background-color: #e0e0eb;
 }
 
+/* Carousel */
 .carousel-inner img {
     width: 100%;
     height: 400px;
@@ -89,25 +95,17 @@ header img {
     object-fit: cover;
 }
 
+/* Hide carousel controls on small screens */
 @media (max-width: 768px) {
-
     .carousel-control-prev,
     .carousel-control-next {
         display: none;
     }
 }
 
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #103F39;
-    color: white;
-    font-size: 0.9em;
-}
-
+/* Carousel Captions */
 .carousel-caption {
     background-color: rgba(0, 0, 0, 0.184);
-    /* Semi-transparent black background */
     padding: 20px;
     border-radius: 10px;
 }
@@ -123,30 +121,11 @@ footer {
     font-size: 1rem;
 }
 
-.carousel-caption {
-    background-color: rgba(0, 0, 0, 0.184);
-    /* Semi-transparent black background */
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.carousel-caption h5 {
-    font-weight: bold;
-    color: white;
-    font-size: 1.5rem;
-}
-
-.carousel-caption p {
-    color: white;
-    font-size: 1rem;
-}
-
-/* Banner Layanan */
+/* ========== Banner Layanan ========== */
 .banner-container {
     display: flex;
     overflow-x: auto;
-    overflow-y: visible;
-    /* Menjaga agar scroll vertikal tidak terkunci */
+    overflow-y: hidden;
     gap: 10px;
     padding-bottom: 10px;
     scroll-behavior: smooth;
@@ -155,15 +134,12 @@ footer {
 
 .banner-card {
     flex: 0 0 30%;
-    /* Mengatur agar ada 3 card dalam satu baris */
     scroll-snap-align: center;
-    /* Menambahkan scroll-snap ke card, bukan container */
     border-radius: 10px;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
 
-/* Gambar Banner */
 .banner-img {
     width: 100%;
     height: 100%;
@@ -171,7 +147,7 @@ footer {
     border-radius: 10px;
 }
 
-/* Scrollbar Custom */
+/* Custom Scrollbar for Banner */
 .banner-container::-webkit-scrollbar {
     height: 8px;
 }
@@ -185,7 +161,7 @@ footer {
     background-color: #555;
 }
 
-/* Responsif */
+/* Responsive Banner Cards */
 @media (max-width: 768px) {
     .banner-card {
         flex: 0 0 60%;
@@ -198,106 +174,95 @@ footer {
     }
 }
 
-
-/* Popup Modal Styling */
+/* ========== Popup Modal ========== */
 .popup-modal {
-    display: none;
-    /* Modal disembunyikan secara default */
+    display: none; /* Tersembunyi secara default */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    /* Latar belakang hitam transparan */
+    background-color: rgba(0, 0, 0, 0.8); /* Latar belakang semi-transparan */
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    /* Menempatkan modal di atas elemen lain */
 }
 
+/* Popup Content */
+.popup-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Gambar dalam popup dengan ukuran asli, tetapi disesuaikan agar tidak keluar layar */
 .popup-img {
-    max-width: 90%;
-    max-height: 90%;
-    object-fit: contain;
+    width: 100%;      
+    height: auto;    
+    max-width: 900%;  
+    max-height: 90vh;
+    border-radius: 10px;
+    display: block;
+    object-fit: contain; 
 }
 
+/* Tombol Close (X) */
 .close-btn {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.close-btn:hover {
-    color: #ff0000;
-}
-
-/* Kontainer untuk aplikasi */
-.app-container {
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    gap: 20px;
-    /* Memberikan jarak antar card */
-    margin: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 1100;
+}
+
+/* Hover Effect pada Tombol Close */
+.close-btn:hover {
+    background-color: rgba(255, 0, 0, 0.8);
+    transform: scale(1.1);
 }
 
 
-/* Responsivitas untuk tablet dan ponsel */
-@media (max-width: 1200px) {
-    .app-card {
-        width: calc(33.33% - 20px);
-        /* 3 aplikasi per baris */
-    }
-}
-
-@media (max-width: 768px) {
-    .app-card {
-        width: calc(50% - 20px);
-        /* 2 aplikasi per baris */
-    }
-}
-
-@media (max-width: 480px) {
-    .app-card {
-        width: 100%;
-        /* 1 aplikasi per baris pada perangkat kecil */
-    }
-}
-
-
-/* Aplikasi Pelayanan */
+/* ========== Application Cards Layout ========== */
 .app-container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    /* 5 aplikasi per baris untuk ukuran desktop */
-    gap: 0px;
-    /* Jarak antar aplikasi */
+    grid-template-columns: repeat(5, 1fr); /* 5 kolom untuk layar besar */
+    gap: 20px; /* Menambah jarak antar card */
     margin-bottom: 40px;
+    padding: 0 15px; /* Menambahkan padding pada sisi kiri dan kanan */
 }
 
 .app-card {
-    width: 250px;
+    width: 100%; /* Menyesuaikan lebar card dengan kontainer */
     text-align: center;
     margin: 0px;
     border-radius: 10px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Menambahkan transisi pada transformasi */
     border-color: #333;
 }
 
 .app-card:hover {
     transform: scale(1.05);
-
     background-color: #f4f4f9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Bayangan lebih jelas saat hover */
 }
 
 .app-card img {
     width: 100px;
     height: 100px;
+    object-fit: contain; /* Pastikan gambar tetap proporsional */
+    margin-bottom: 10px; /* Memberikan jarak antara gambar dan teks */
 }
 
 .app-card-body {
@@ -308,35 +273,53 @@ footer {
     font-weight: bold;
 }
 
-/* Responsif untuk tampilan mobile */
+/* Responsive for Application Cards */
+
+/* Untuk layar lebih kecil dari 1200px */
+@media (max-width: 1200px) {
+    .app-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 kolom pada layar menengah */
+    }
+}
+
+/* Untuk layar lebih kecil dari 768px */
 @media (max-width: 768px) {
     .app-container {
-        grid-template-columns: repeat(2, 1fr);
-        /* 2 aplikasi per baris untuk tablet */
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom pada tablet */
+    }
+
+    .app-card img {
+        width: 80px; /* Mengurangi ukuran gambar untuk tampilan lebih kecil */
+        height: 80px;
     }
 }
 
+/* Untuk layar lebih kecil dari 480px */
 @media (max-width: 480px) {
     .app-container {
-        grid-template-columns: repeat(2, 1fr);
-        /* 2 aplikasi per baris untuk ponsel */
+        grid-template-columns: 1fr; /* 1 kolom untuk layar ponsel */
+    }
+
+    .app-card img {
+        width: 70px; /* Ukuran gambar yang lebih kecil */
+        height: 70px;
     }
 }
 
-/* Responsif untuk tablet dengan ukuran layar 600px hingga 768px */
+/* Untuk layar lebih besar dari 600px tapi lebih kecil dari 768px */
 @media (min-width: 600px) and (max-width: 768px) {
     .app-container {
-        grid-template-columns: repeat(3, 1fr);
-        /* 3 aplikasi per baris pada tablet */
+        grid-template-columns: repeat(3, 1fr); /* 3 kolom untuk tablet */
+    }
+
+    .app-card img {
+        width: 90px; /* Ukuran gambar yang sedikit lebih besar pada tablet */
+        height: 90px;
     }
 }
 
-/* Styling for the heading */
-.heading-bold {
-    font-weight: bold;
-}
 
-/* Container for the scrolling animation */
+/* ========== Scrolling Logo Section ========== */
 .scrolling-logo-container {
     overflow: hidden;
     white-space: nowrap;
@@ -349,12 +332,10 @@ footer {
     align-items: center;
     animation: scrollLeft linear infinite;
     animation-play-state: running;
-    /* Set to running by default */
 }
 
 .scrolling-logo-container:hover .scrolling-logo-content {
     animation-play-state: paused;
-    /* Pause animation on hover */
 }
 
 .app-card-logo {
@@ -364,17 +345,15 @@ footer {
 
 .app-card-logo img {
     width: 100px;
-    /* Adjust logo size */
     height: auto;
     transition: transform 0.3s;
 }
 
-/* Hover effect on logos */
 .app-card-logo:hover img {
     transform: scale(1.1);
 }
 
-/* Keyframes to control scrolling speed */
+/* Scrolling Animation Keyframes */
 @keyframes scrollLeft {
     0% {
         transform: translateX(0);
@@ -384,3 +363,12 @@ footer {
         transform: translateX(-100%);
     }
 }
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #103F39;
+    color: white;
+    font-size: 0.9em;
+  }
+		  
